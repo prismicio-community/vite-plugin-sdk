@@ -21,7 +21,11 @@ TODO: Replace all on all files (README.md, CONTRIBUTING.md, bug_report.md, packa
 
 <!-- TODO: Replacing link to Prismic with [Prismic][prismic] is useful here -->
 
-Vite plugin to bundle SDKs.
+[Vite][vite] plugin to bundle SDKs.
+
+- 🏭 &nbsp;Bundle for everyone with ESM and CJS;
+- 🛠 &nbsp;Extensible thanks to [defu][defu];
+- ⚡ &nbsp;Quick install and maintainability.
 
 <!--
 
@@ -43,7 +47,42 @@ npm install --save-dev vite-plugin-sdk
 
 ## Documentation
 
-To discover what's new on this package check out [the changelog][changelog]. For full documentation, visit the [official Prismic documentation][prismic-docs].
+`vite-plugin-sdk` adapts [Vite][vite] to bundle SDKs for distribution.
+
+### Usage
+
+```typescript
+// vite.config.js
+import sdk from "vite-plugin-sdk";
+
+export default {
+	plugins: [sdk(/* options */)],
+};
+```
+
+### Options
+
+```typescript
+{
+	/**
+	 * `package.json` to create config from.
+	 *
+	 * @defaultValue First `package.json` found from the current working directory and up.
+	 */
+	packageJSON: PackageJSON;
+
+	/**
+	 * Whether or not to generate type declarations in the build.
+	 *
+	 * @defaultValue `true`
+	 */
+	dts: boolean;
+}
+```
+
+---
+
+To discover what's new on this package check out [the changelog][changelog].
 
 ## Contributing
 
@@ -79,11 +118,12 @@ limitations under the License.
 
 <!-- Links -->
 
+[vite]: https://vitejs.dev
 [prismic]: https://prismic.io
+[defu]: https://github.com/unjs/defu#function-merger
 
 <!-- TODO: Replace link with a more useful one if available -->
 
-[prismic-docs]: https://prismic.io/docs
 [changelog]: ./CHANGELOG.md
 [contributing]: ./CONTRIBUTING.md
 

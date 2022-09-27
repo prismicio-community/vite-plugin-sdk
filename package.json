@@ -1,14 +1,14 @@
 {
-	"name": "package_name",
+	"name": "vite-plugin-sdk",
 	"version": "0.0.0",
-	"description": "package_description",
+	"description": "Vite plugin to bundle SDKs",
 	"keywords": [
 		"typescript",
-		"prismic"
+		"vite-plugin"
 	],
 	"repository": {
 		"type": "git",
-		"url": "ssh://git@github.com/github_org_slash_github_repo.git"
+		"url": "ssh://git@github.com/prismicio-community/vite-plugin-sdk.git"
 	},
 	"license": "Apache-2.0",
 	"author": "Prismic <contact@prismic.io> (https://prismic.io)",
@@ -28,37 +28,43 @@
 		"src"
 	],
 	"scripts": {
-		"build": "siroc build",
-		"dev": "siroc build --watch",
-		"format": "prettier --write .",
-		"lint": "eslint --ext .js,.ts .",
+		"build": "vite build",
+		"dev": "vite build --watch",
 		"prepare": "npm run build",
 		"release": "npm run test && standard-version && git push --follow-tags && npm run build && npm publish",
 		"release:alpha": "npm run test && standard-version --release-as major --prerelease alpha && git push --follow-tags && npm run build && npm publish --tag alpha",
 		"release:alpha:dry": "standard-version --release-as major --prerelease alpha --dry-run",
 		"release:dry": "standard-version --dry-run",
-		"size": "size-limit",
 		"test": "npm run lint && npm run types && npm run unit && npm run build && npm run size",
+		"lint": "eslint --ext .js,.ts .",
+		"format": "prettier --write .",
 		"types": "tsc --noEmit",
 		"unit": "vitest run --coverage",
-		"unit:watch": "vitest watch"
+		"unit:watch": "vitest watch",
+		"size": "size-limit"
+	},
+	"dependencies": {
+		"@rollup/plugin-typescript": "^8.5.0",
+		"defu": "^6.1.0",
+		"fs-extra": "^10.1.0",
+		"vite": "^3.1.3"
 	},
 	"devDependencies": {
-		"@size-limit/preset-small-lib": "^8.0.1",
-		"@typescript-eslint/eslint-plugin": "~5.33.1",
-		"@typescript-eslint/parser": "^5.34.0",
-		"@vitest/coverage-c8": "^0.22.1",
-		"eslint": "^8.22.0",
+		"@size-limit/preset-small-lib": "^8.1.0",
+		"@types/fs-extra": "^9.0.13",
+		"@typescript-eslint/eslint-plugin": "~5.38.1",
+		"@typescript-eslint/parser": "^5.38.1",
+		"@vitest/coverage-c8": "^0.23.4",
+		"eslint": "^8.24.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-tsdoc": "^0.2.16",
+		"eslint-plugin-tsdoc": "^0.2.17",
 		"prettier": "^2.7.1",
-		"prettier-plugin-jsdoc": "^0.3.38",
-		"siroc": "^0.16.0",
-		"size-limit": "^8.0.1",
+		"prettier-plugin-jsdoc": "^0.4.2",
+		"size-limit": "^8.1.0",
 		"standard-version": "^9.5.0",
-		"typescript": "^4.7.4",
-		"vitest": "^0.22.1"
+		"typescript": "^4.8.3",
+		"vitest": "^0.23.4"
 	},
 	"engines": {
 		"node": ">=14.15.0"
