@@ -3,14 +3,14 @@
 TODO: Go through all "TODO" comments in the project
 
 TODO: Replace all on all files (README.md, CONTRIBUTING.md, bug_report.md, package.json):
-- package_name
-- package_description
-- github_org_slash_github_repo
-- github_repo
+- vite-plugin-sdk
+- Vite plugin to bundle SDKs
+- prismicio-community/vite-plugin-sdk
+- vite-plugin-sdk
 
 -->
 
-# package_name
+# vite-plugin-sdk
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -21,7 +21,7 @@ TODO: Replace all on all files (README.md, CONTRIBUTING.md, bug_report.md, packa
 
 <!-- TODO: Replacing link to Prismic with [Prismic][prismic] is useful here -->
 
-package_description.
+Vite plugin to bundle SDKs.
 
 <!--
 
@@ -38,7 +38,7 @@ Non-breaking space: &nbsp; are here on purpose to fix emoji rendering on certain
 ## Install
 
 ```bash
-npm install package_name
+npm install --save-dev vite-plugin-sdk
 ```
 
 ## Documentation
@@ -49,7 +49,7 @@ To discover what's new on this package check out [the changelog][changelog]. For
 
 Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the Prismic developer community!
 
-**Asking a question**: [Open a new topic][forum-question] on our community forum explaining what you want to achieve / your question. Our support team will get back to you shortly.
+**Asking a question**: [Open an issue][repo-bug-report] explaining what you want to achieve / your question. Our support team will get back to you shortly.
 
 **Reporting a bug**: [Open an issue][repo-bug-report] explaining your application's setup and the bug you're encountering.
 
@@ -89,22 +89,21 @@ limitations under the License.
 
 <!-- TODO: Replace link with a more useful one if available -->
 
-[forum-question]: https://community.prismic.io
-[repo-bug-report]: https://github.com/github_org_slash_github_repo/issues/new?assignees=&labels=bug&template=bug_report.md&title=
-[repo-feature-request]: https://github.com/github_org_slash_github_repo/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=
-[repo-pull-requests]: https://github.com/github_org_slash_github_repo/pulls
+[repo-bug-report]: https://github.com/prismicio-community/vite-plugin-sdk/issues/new?assignees=&labels=bug&template=bug_report.md&title=
+[repo-feature-request]: https://github.com/prismicio-community/vite-plugin-sdk/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=
+[repo-pull-requests]: https://github.com/prismicio-community/vite-plugin-sdk/pulls
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/package_name/latest.svg
-[npm-version-href]: https://npmjs.com/package/package_name
-[npm-downloads-src]: https://img.shields.io/npm/dm/package_name.svg
-[npm-downloads-href]: https://npmjs.com/package/package_name
-[github-actions-ci-src]: https://github.com/github_org_slash_github_repo/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/github_org_slash_github_repo/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/github/github_org_slash_github_repo.svg
-[codecov-href]: https://codecov.io/gh/github_org_slash_github_repo
+[npm-version-src]: https://img.shields.io/npm/v/vite-plugin-sdk/latest.svg
+[npm-version-href]: https://npmjs.com/package/vite-plugin-sdk
+[npm-downloads-src]: https://img.shields.io/npm/dm/vite-plugin-sdk.svg
+[npm-downloads-href]: https://npmjs.com/package/vite-plugin-sdk
+[github-actions-ci-src]: https://github.com/prismicio-community/vite-plugin-sdk/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/prismicio-community/vite-plugin-sdk/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/github/prismicio-community/vite-plugin-sdk.svg
+[codecov-href]: https://codecov.io/gh/prismicio-community/vite-plugin-sdk
 [conventional-commits-src]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-href]: https://conventionalcommits.org
-[license-src]: https://img.shields.io/npm/l/package_name.svg
-[license-href]: https://npmjs.com/package/package_name
+[license-src]: https://img.shields.io/npm/l/vite-plugin-sdk.svg
+[license-href]: https://npmjs.com/package/vite-plugin-sdk

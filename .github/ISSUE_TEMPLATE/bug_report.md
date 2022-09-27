@@ -16,7 +16,7 @@ assignees: ""
 
 ### Versions
 
-- package_name: <!-- ex: v0.1.0 -->
+- vite-plugin-sdk: <!-- ex: v0.1.0 -->
 - node: <!-- ex: v14.15.0 -->
 
 ### Reproduction
