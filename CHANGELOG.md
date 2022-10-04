@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.2...v0.0.3) (2022-10-04)
+
+
+### Bug Fixes
+
+* disable config extension in test mode ([3870589](https://github.com/prismicio-community/vite-plugin-sdk/commit/3870589067c721de062d29a08fde463283a3bfba))
+
 ### [0.0.2](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.1...v0.0.2) (2022-10-04)
 
 
