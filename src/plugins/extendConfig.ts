@@ -57,7 +57,13 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 
 	return {
 		name: "sdk:extend-config",
-		config: (userConfig) => {
+		config: (userConfig, env) => {
+			// Disable config extension in test otherwise coverage runs twice because of Vitest's watcher, see:
+			// https://github.com/vitest-dev/vitest/blob/main/packages/vitest/src/node/core.ts#L382-L426
+			if (env.mode === "test") {
+				return;
+			}
+
 			return defuFn(userConfig, DEFAULT_CONFIG);
 		},
 	};
