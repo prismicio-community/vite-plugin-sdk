@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { PackageJSON } from "./types";
+import { PackageJSON } from "../types";
 
 export const readPackageJSON = (rootDir = process.cwd()): PackageJSON => {
 	try {
