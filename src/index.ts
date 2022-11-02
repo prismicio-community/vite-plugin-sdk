@@ -1,7 +1,8 @@
 import type { Plugin } from "vite";
 
+import { readPackageJSON } from "./lib/readPackageJSON";
+
 import { extendConfigPlugin, moveTypeDeclarationsPlugin } from "./plugins";
-import { readPackageJSON } from "./readPackageJSON";
 import type { Options } from "./types";
 
 const DEFAULT_OPTIONS = {
