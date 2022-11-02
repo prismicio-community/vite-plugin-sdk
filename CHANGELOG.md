@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.3...v0.0.4) (2022-11-02)
+
+
+### Bug Fixes
+
+* preserve dynamic imports for CommonJS files ([#1](https://github.com/prismicio-community/vite-plugin-sdk/issues/1)) ([d50984d](https://github.com/prismicio-community/vite-plugin-sdk/commit/d50984d7fe78d0648f39d4f7fe105136046097f6))
+
 ### [0.0.3](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.2...v0.0.3) (2022-10-04)
 
 
