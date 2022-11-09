@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.4...v0.0.5) (2022-11-09)
+
+
+### Features
+
+* add `internalDependencies` option ([#2](https://github.com/prismicio-community/vite-plugin-sdk/issues/2)) ([52f59a5](https://github.com/prismicio-community/vite-plugin-sdk/commit/52f59a5dd8293f2945ada8781e8e6c41f274fbd7))
+
 ### [0.0.4](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.3...v0.0.4) (2022-11-02)
 
 
