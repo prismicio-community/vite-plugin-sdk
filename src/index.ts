@@ -7,6 +7,7 @@ import type { Options } from "./types";
 
 const DEFAULT_OPTIONS = {
 	dts: true,
+	internalDependencies: [],
 };
 
 const sdkPlugin = (rawOptions?: Partial<Options>): (Plugin | null)[] => {

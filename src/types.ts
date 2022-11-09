@@ -15,6 +15,11 @@ export interface Options {
 	 * @defaultValue `true`
 	 */
 	dts: boolean;
+
+	/**
+	 * A list of dependencies to ignore from Rollup's `external` option.
+	 */
+	internalDependencies: string[];
 }
 
 /**

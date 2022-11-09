@@ -35,7 +35,12 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 						...Object.keys(options.packageJSON.optionalDependencies ?? {}),
 						...Object.keys(options.packageJSON.peerDependencies ?? {}),
 					].map((name) => new RegExp(`^${name}(?:\/.*)?$`)),
-				],
+				].filter(
+					(regexp) =>
+						!options.internalDependencies.some((internalDependency) =>
+							regexp.test(internalDependency),
+						),
+				),
 				output: {
 					preserveModules: true,
 					preserveModulesRoot: "src",
