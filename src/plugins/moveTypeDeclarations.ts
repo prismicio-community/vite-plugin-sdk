@@ -14,9 +14,11 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 		name: "sdk:move-type-declarations",
 		apply: "build",
 		closeBundle: () => {
-			// TODO: Replace with native Node 16 compatible version when 14 is EOL
-			fse.copySync("./dist/src", "./dist", { recursive: true });
-			fs.rmSync("./dist/src", { recursive: true });
+			if (fs.existsSync("./dist/src")) {
+				// TODO: Replace with native Node 16 compatible version when 14 is EOL
+				fse.copySync("./dist/src", "./dist", { recursive: true });
+				fs.rmSync("./dist/src", { recursive: true });
+			}
 		},
 	};
 };
