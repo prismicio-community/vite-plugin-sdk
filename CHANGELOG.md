@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.5...v0.0.6) (2022-11-10)
+
+
+### Bug Fixes
+
+* move type declaration only if declarations exist ([#3](https://github.com/prismicio-community/vite-plugin-sdk/issues/3)) ([0561622](https://github.com/prismicio-community/vite-plugin-sdk/commit/05616226b3642ed39ed3d2eb1c3abac645b38325))
+
 ### [0.0.5](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.4...v0.0.5) (2022-11-09)
 
 
