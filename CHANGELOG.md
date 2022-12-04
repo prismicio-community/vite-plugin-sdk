@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7-alpha.0](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.6...v0.0.7-alpha.0) (2022-12-04)
+
+
+### Features
+
+* support custom `src` and `out` dir ([50a494e](https://github.com/prismicio-community/vite-plugin-sdk/commit/50a494ef6077bc393e384067f5337f5a2be26805))
+
+
+### Chore
+
+* **deps:** maintain dependencies ([2990279](https://github.com/prismicio-community/vite-plugin-sdk/commit/2990279a1eb60956004ed2558bd1c739d1c20b9c))
+
 ### [0.0.6](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.5...v0.0.6) (2022-11-10)
 
 
