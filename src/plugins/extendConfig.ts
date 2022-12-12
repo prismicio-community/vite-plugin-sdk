@@ -5,6 +5,7 @@ import { defineConfig, Plugin, UserConfig } from "vite";
 import { defuFn } from "defu";
 
 import { builtins } from "../lib/builtins";
+import { castArray } from "../lib/castArray";
 import type { Options } from "../types";
 
 export const extendConfigPlugin = (options: Options): Plugin => {
@@ -12,7 +13,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 		defineConfig({
 			build: {
 				lib: {
-					entry: path.posix.join(options.srcDir, "index.ts"),
+					entry: "./src/index.ts",
 					formats: ["es", "cjs"],
 					fileName: (format) => {
 						switch (format) {
@@ -48,7 +49,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					),
 					output: {
 						preserveModules: true,
-						preserveModulesRoot: options.srcDir,
+						preserveModulesRoot: castArray(options.entryDir).shift(),
 						inlineDynamicImports: false,
 					},
 					plugins: [
@@ -56,7 +57,9 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 							rootDir: ".",
 							declaration: options.dts,
 							declarationDir: userConfig.build?.outDir || "dist",
-							include: [path.posix.join(options.srcDir, "**/*")],
+							include: castArray(options.entryDir).map((dir) =>
+								path.posix.join(dir, "**/*"),
+							),
 						}) as Plugin,
 						// Preserve dynamic imports for CommonJS
 						// TODO: Remove when Vite updates to Rollup v3. This behavior is enabled by default in v3.

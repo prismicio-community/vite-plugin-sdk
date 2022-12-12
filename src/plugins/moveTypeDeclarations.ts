@@ -5,6 +5,7 @@ import fse from "fs-extra";
 import type { Plugin, UserConfig } from "vite";
 
 import { Options } from "../types";
+import { castArray } from "../lib/castArray";
 
 export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 	if (!options.dts) {
@@ -21,12 +22,15 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 		},
 		closeBundle: () => {
 			const outDir = savedUserConfig.build?.outDir || "dist";
-			const srcOutDir = path.posix.join(outDir, options.srcDir);
 
-			if (fs.existsSync(srcOutDir)) {
-				// TODO: Replace with native Node 16 compatible version when 14 is EOL
-				fse.copySync(srcOutDir, outDir, { recursive: true });
-				fs.rmSync(srcOutDir, { recursive: true });
+			for (const entryDir of castArray(options.entryDir)) {
+				const entryOutDir = path.posix.join(outDir, entryDir);
+
+				if (fs.existsSync(entryOutDir)) {
+					// TODO: Replace with native Node 16 compatible version when 14 is EOL
+					fse.copySync(entryOutDir, outDir, { recursive: true });
+					fs.rmSync(entryOutDir, { recursive: true });
+				}
 			}
 		},
 	};

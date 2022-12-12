@@ -22,11 +22,11 @@ export interface Options {
 	internalDependencies: string[];
 
 	/**
-	 * Directory to consider as the root `src` directory
+	 * Directories to consider as entry directory for type generation.
 	 *
 	 * @defaultValue `src`
 	 */
-	srcDir: string;
+	entryDir: string | string[];
 }
 
 /**
