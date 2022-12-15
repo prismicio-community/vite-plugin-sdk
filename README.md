@@ -77,12 +77,34 @@ export default {
 	 * @defaultValue `true`
 	 */
 	dts: boolean;
+
+	/**
+	 * A list of dependencies to ignore from Rollup's `external` option.
+	 *
+	 * @defaultValue `[]`
+	 */
+	internalDependencies: string[]
+
+	/**
+	 * Directory to consider as the root `src` directory
+	 *
+	 * @defaultValue `src`
+	 */
+	srcDir: string
 }
 ```
 
 ---
 
 To discover what's new on this package check out [the changelog][changelog].
+
+## Packages using `vite-plugin-sdk`
+
+Find examples of `vite-plugin-sdk` in the real world.
+
+- [`prismic-react`](https://github.com/prismicio/prismic-react) - Helpers to integrate Prismic into Next.js apps.
+- [`prismic-next`](https://github.com/prismicio/prismic-next) - React components and hooks to fetch and present Prismic content.
+- [`nuxt-hue`](https://github.com/lihbr/nuxt-hue) - Enlighten your Nuxt applications.
 
 ## Contributing
 
