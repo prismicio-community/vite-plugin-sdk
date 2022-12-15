@@ -100,7 +100,7 @@ To discover what's new on this package check out [the changelog][changelog].
 
 ## Packages using `vite-plugin-sdk`
 
-Find example of `vite-plugin-sdk` in the real world.
+Find examples of `vite-plugin-sdk` in the real world.
 
 - [`prismic-react`](https://github.com/prismicio/prismic-react) - Helpers to integrate Prismic into Next.js apps.
 - [`prismic-next`](https://github.com/prismicio/prismic-next) - React components and hooks to fetch and present Prismic content.
