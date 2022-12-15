@@ -102,8 +102,9 @@ To discover what's new on this package check out [the changelog][changelog].
 
 Find examples of `vite-plugin-sdk` in the real world.
 
-- [`prismic-react`](https://github.com/prismicio/prismic-react) - Helpers to integrate Prismic into Next.js apps.
-- [`prismic-next`](https://github.com/prismicio/prismic-next) - React components and hooks to fetch and present Prismic content.
+- [`@prismicio/react`](https://github.com/prismicio/prismic-react) - React components and hooks to fetch and present Prismic content.
+- [`@prismicio/next`](https://github.com/prismicio/prismic-next) - Helpers to integrate Prismic into Next.js apps.
+- [`r19`](https://github.com/prismicio-community/r19) - Simple remote procedure calls (RPC) in TypeScript.
 - [`nuxt-hue`](https://github.com/lihbr/nuxt-hue) - Enlighten your Nuxt applications.
 
 ## Contributing
