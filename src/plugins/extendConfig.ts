@@ -50,7 +50,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					typescript({
 						rootDir: ".",
 						declaration: options.dts,
-						declarationDir: "dist",
+						outDir: "dist",
 						include: ["./src/**/*"],
 					}) as Plugin,
 				],
