@@ -53,14 +53,6 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 						declarationDir: "dist",
 						include: ["./src/**/*"],
 					}) as Plugin,
-					// Preserve dynamic imports for CommonJS
-					// TODO: Remove when Vite updates to Rollup v3. This behavior is enabled by default in v3.
-					{
-						name: "preserve-dynamic-imports",
-						renderDynamicImport() {
-							return { left: "import(", right: ")" };
-						},
-					},
 				],
 			},
 			minify: false,
