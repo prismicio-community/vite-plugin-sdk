@@ -18,6 +18,8 @@ export interface Options {
 
 	/**
 	 * A list of dependencies to ignore from Rollup's `external` option.
+	 *
+	 * @defaultValue `[]`
 	 */
 	internalDependencies: string[];
 
