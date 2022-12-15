@@ -20,6 +20,13 @@ export interface Options {
 	 * A list of dependencies to ignore from Rollup's `external` option.
 	 */
 	internalDependencies: string[];
+
+	/**
+	 * Directory to consider as the root `src` directory
+	 *
+	 * @defaultValue `src`
+	 */
+	srcDir: string;
 }
 
 /**
