@@ -48,7 +48,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					),
 					output: {
 						preserveModules: true,
-						preserveModulesRoot: "src",
+						preserveModulesRoot: options.srcDir,
 						inlineDynamicImports: false,
 					},
 					plugins: [
