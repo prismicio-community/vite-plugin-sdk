@@ -1,7 +1,8 @@
 import * as fs from "node:fs";
+import * as path from "node:path";
 
 import fse from "fs-extra";
-import type { Plugin } from "vite";
+import type { Plugin, UserConfig } from "vite";
 
 import { Options } from "../types";
 
@@ -10,14 +11,22 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 		return null;
 	}
 
+	let savedUserConfig: UserConfig;
+
 	return {
 		name: "sdk:move-type-declarations",
 		apply: "build",
+		config: (userConfig) => {
+			savedUserConfig = userConfig;
+		},
 		closeBundle: () => {
-			if (fs.existsSync("./dist/src")) {
+			const outDir = savedUserConfig.build?.outDir || "dist";
+			const srcOutDir = path.posix.join(outDir, options.srcDir);
+
+			if (fs.existsSync(srcOutDir)) {
 				// TODO: Replace with native Node 16 compatible version when 14 is EOL
-				fse.copySync("./dist/src", "./dist", { recursive: true });
-				fs.rmSync("./dist/src", { recursive: true });
+				fse.copySync(srcOutDir, outDir, { recursive: true });
+				fs.rmSync(srcOutDir, { recursive: true });
 			}
 		},
 	};

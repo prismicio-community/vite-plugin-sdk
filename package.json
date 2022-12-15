@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-sdk",
-	"version": "0.0.6",
+	"version": "0.0.7-alpha.0",
 	"description": "Vite plugin to bundle SDKs",
 	"keywords": [
 		"typescript",
@@ -32,8 +32,8 @@
 		"dev": "vite build --watch",
 		"prepare": "npm run build",
 		"release": "npm run test && standard-version && git push --follow-tags && npm run build && npm publish",
-		"release:alpha": "npm run test && standard-version --release-as major --prerelease alpha && git push --follow-tags && npm run build && npm publish --tag alpha",
-		"release:alpha:dry": "standard-version --release-as major --prerelease alpha --dry-run",
+		"release:alpha": "npm run test && standard-version --release-as patch --prerelease alpha && git push --follow-tags && npm run build && npm publish --tag alpha",
+		"release:alpha:dry": "standard-version --release-as patch --prerelease alpha --dry-run",
 		"release:dry": "standard-version --dry-run",
 		"test": "npm run lint && npm run types && npm run unit && npm run build && npm run size",
 		"lint": "eslint --ext .js,.ts .",
@@ -51,7 +51,7 @@
 	"devDependencies": {
 		"@size-limit/preset-small-lib": "^8.1.0",
 		"@types/fs-extra": "^9.0.13",
-		"@typescript-eslint/eslint-plugin": "~5.46.1",
+		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",
 		"@vitest/coverage-c8": "^0.25.8",
 		"eslint": "^8.29.0",
