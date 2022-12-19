@@ -102,6 +102,8 @@ To discover what's new on this package check out [the changelog][changelog].
 
 Find examples of `vite-plugin-sdk` in the real world.
 
+- [`@prismicio/client`](https://github.com/prismicio/prismic-client) - The official JavaScript + TypeScript client library for Prismic.
+- [`@prismicio/richtext`](https://github.com/prismicio/prismic-richtext) - A parser and serializer for Prismic's Rich Text format.
 - [`@prismicio/react`](https://github.com/prismicio/prismic-react) - React components and hooks to fetch and present Prismic content.
 - [`@prismicio/next`](https://github.com/prismicio/prismic-next) - Helpers to integrate Prismic into Next.js apps.
 - [`r19`](https://github.com/prismicio-community/r19) - Simple remote procedure calls (RPC) in TypeScript.
