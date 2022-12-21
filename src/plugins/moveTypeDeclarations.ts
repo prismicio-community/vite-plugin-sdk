@@ -11,16 +11,16 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 		return null;
 	}
 
-	let savedUserConfig: UserConfig;
+	let config: UserConfig;
 
 	return {
 		name: "sdk:move-type-declarations",
 		apply: "build",
-		config: (userConfig) => {
-			savedUserConfig = userConfig;
+		configResolved: (resolvedConfig) => {
+			config = resolvedConfig;
 		},
 		closeBundle: () => {
-			const outDir = savedUserConfig.build?.outDir || "dist";
+			const outDir = config.build?.outDir || "dist";
 			const srcOutDir = path.posix.join(outDir, options.srcDir);
 
 			if (fs.existsSync(srcOutDir)) {
