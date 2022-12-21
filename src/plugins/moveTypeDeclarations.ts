@@ -2,7 +2,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 import fse from "fs-extra";
-import type { Plugin, UserConfig } from "vite";
+import type { Plugin, ResolvedConfig } from "vite";
 
 import { Options } from "../types";
 
@@ -11,7 +11,7 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 		return null;
 	}
 
-	let config: UserConfig;
+	let config: ResolvedConfig;
 
 	return {
 		name: "sdk:move-type-declarations",
@@ -20,7 +20,7 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 			config = resolvedConfig;
 		},
 		closeBundle: () => {
-			const outDir = config.build?.outDir || "dist";
+			const outDir = config.build.outDir;
 			const srcOutDir = path.posix.join(outDir, options.srcDir);
 
 			if (fs.existsSync(srcOutDir)) {
