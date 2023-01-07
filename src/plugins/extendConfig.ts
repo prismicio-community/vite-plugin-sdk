@@ -1,6 +1,7 @@
 import * as path from "node:path";
 
 import typescript from "@rollup/plugin-typescript";
+import renameNodeModules from "rollup-plugin-rename-node-modules";
 import { defineConfig, Plugin, UserConfig } from "vite";
 import { defuFn } from "defu";
 
@@ -58,6 +59,9 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 							outDir: userConfig.build?.outDir || "dist",
 							include: [path.posix.join(options.srcDir, "**/*")],
 						}) as Plugin,
+						// Ensure bundled dependencies are published to npm.
+						// `npm pack` ignores directories named `node_modules`.
+						renameNodeModules("_node_modules") as Plugin,
 					],
 				},
 				minify: false,
