@@ -1,6 +1,7 @@
 {
 	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-jsdoc"],
 	"importOrder": [
+		"^vitest(/|$)",
 		"^node:(.*)$",
 		"<THIRD_PARTY_MODULES>",
 		"^(?!.*/src(?:/|$)).*/__testutils__(?:/|$)",
