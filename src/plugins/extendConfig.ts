@@ -1,11 +1,12 @@
 import * as path from "node:path";
 
 import typescript from "@rollup/plugin-typescript";
-import renameNodeModules from "rollup-plugin-rename-node-modules";
-import { defineConfig, Plugin, UserConfig } from "vite";
 import { defuFn } from "defu";
+import renameNodeModules from "rollup-plugin-rename-node-modules";
+import { Plugin, UserConfig, defineConfig } from "vite";
 
 import { builtins } from "../lib/builtins";
+
 import type { Options } from "../types";
 
 export const extendConfigPlugin = (options: Options): Plugin => {

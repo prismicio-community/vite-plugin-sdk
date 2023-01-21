@@ -2,8 +2,9 @@ import type { Plugin } from "vite";
 
 import { readPackageJSON } from "./lib/readPackageJSON";
 
-import { extendConfigPlugin, moveTypeDeclarationsPlugin } from "./plugins";
 import type { Options } from "./types";
+
+import { extendConfigPlugin, moveTypeDeclarationsPlugin } from "./plugins";
 
 const DEFAULT_OPTIONS = {
 	dts: true,
