@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.0...v0.1.1) (2023-03-04)
+
+
+### Bug Fixes
+
+* don't bundle `rollup-plugin-rename-node-modules` as an internal dependency ([c2df46c](https://github.com/prismicio-community/vite-plugin-sdk/commit/c2df46c84d5536c93156d27191214cfec3b97c37))
+* publish internal dependencies to npm ([#7](https://github.com/prismicio-community/vite-plugin-sdk/issues/7)) ([822cd02](https://github.com/prismicio-community/vite-plugin-sdk/commit/822cd0227b9c35723e23b1575f730bd073785f2f))
+* type issues with `ResolvedConfig` ([e740d79](https://github.com/prismicio-community/vite-plugin-sdk/commit/e740d7912a7c619c968ef100f836d821eaa97647))
+
+
+### Documentation
+
+* add more package using `vite-plugin-sdk` ([1090b1d](https://github.com/prismicio-community/vite-plugin-sdk/commit/1090b1d7ccbe4ae8fd06d6d6352767d2cd23bbdc))
+* add more package using `vite-plugin-sdk` ([fdb7fa2](https://github.com/prismicio-community/vite-plugin-sdk/commit/fdb7fa2b26135f114a79c2241a10ed36df51d050))
+* add more packages using `vite-plugin-sdk` ([953e2a7](https://github.com/prismicio-community/vite-plugin-sdk/commit/953e2a760f0afff354eb742a05b9dfcbd4666173))
+
+
+### Refactor
+
+* use `resolvedConfig` instead of `config` hook ([aac7f39](https://github.com/prismicio-community/vite-plugin-sdk/commit/aac7f3916b83e636103949f38cd44f00b5a62ace))
+
+
+### Chore
+
+* update `.prettierrc` ([7791c62](https://github.com/prismicio-community/vite-plugin-sdk/commit/7791c62c1076bc3b3917a8086a3d16ad9f9a5a63))
+* update repo to latest Prismic standards ([167590c](https://github.com/prismicio-community/vite-plugin-sdk/commit/167590c3095e04ea7168a4c6578562dbe9c97028))
+
 ## [0.1.0](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.0.7-alpha.0...v0.1.0) (2022-12-15)
 
 
