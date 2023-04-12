@@ -55,7 +55,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					},
 					plugins: [
 						typescript({
-							rootDir: ".",
+							rootDir: options.srcDir,
 							declaration: options.dts,
 							outDir: userConfig.build?.outDir || "dist",
 							include: [path.posix.join(options.srcDir, "**/*")],
