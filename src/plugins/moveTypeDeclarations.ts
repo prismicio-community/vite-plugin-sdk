@@ -25,7 +25,7 @@ export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 
 			if (fs.existsSync(srcOutDir)) {
 				// TODO: Replace with native Node 16 compatible version when 14 is EOL
-				fse.copySync(srcOutDir, outDir, { recursive: true });
+				fse.copySync(srcOutDir, outDir /*, { recursive: true } */);
 				fs.rmSync(srcOutDir, { recursive: true });
 			}
 		},
