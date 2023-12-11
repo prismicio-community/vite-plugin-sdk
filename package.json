@@ -70,7 +70,7 @@
 		"vitest": "^1.0.4"
 	},
 	"peerDependencies": {
-		"vite": "^4 | ^5"
+		"vite": "^4 || ^5"
 	},
 	"engines": {
 		"node": ">=14.15.0"
