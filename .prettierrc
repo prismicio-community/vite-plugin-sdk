@@ -23,7 +23,7 @@
 	"importOrderGroupNamespaceSpecifiers": true,
 	"jsdocSeparateReturnsFromParam": true,
 	"jsdocSeparateTagGroups": true,
-	"jsdocSingleLineComment": false,
+	"jsdocCommentLineStrategy": "multiline",
 	"tsdoc": true,
 	"printWidth": 80,
 	"useTabs": true,
