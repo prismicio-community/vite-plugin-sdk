@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [sdk()],
 	test: {
 		coverage: {
+			provider: "v8",
 			reporter: ["lcovonly", "text"],
 		},
 	},
