@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.2...v0.1.3) (2024-12-03)
+
+
+### Chore
+
+* **deps:** maintain dependencies and migrate to eslint 9 ([9ce1c43](https://github.com/prismicio-community/vite-plugin-sdk/commit/9ce1c43cd3b403e6a9d12ed727cec5556e5fb6ee))
+* **deps:** maintain dependencies and migrate to eslint 9 ([8781bbe](https://github.com/prismicio-community/vite-plugin-sdk/commit/8781bbeec56f530418c0b21ce3d0d13de23602b1))
+
 ### [0.1.2](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.1...v0.1.2) (2023-12-11)
 
 
