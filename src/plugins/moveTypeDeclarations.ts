@@ -4,7 +4,7 @@ import * as path from "node:path";
 import fse from "fs-extra";
 import type { Plugin, ResolvedConfig } from "vite";
 
-import { Options } from "../types";
+import type { Options } from "../types";
 
 export const moveTypeDeclarationsPlugin = (options: Options): Plugin | null => {
 	if (!options.dts) {

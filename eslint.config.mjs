@@ -37,6 +37,7 @@ export default tseslint.config(
 			],
 			"@typescript-eslint/no-require-imports": "off",
 			"@typescript-eslint/explicit-module-boundary-types": "error",
+			"@typescript-eslint/consistent-type-imports": "error",
 			"tsdoc/syntax": "warn",
 		},
 	},
