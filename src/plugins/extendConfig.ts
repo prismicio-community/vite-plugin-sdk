@@ -1,14 +1,14 @@
-import * as path from "node:path";
+import * as path from "node:path"
 
-import typescript from "@rollup/plugin-typescript";
-import { defuFn } from "defu";
-import renameNodeModules from "rollup-plugin-rename-node-modules";
-import type { Plugin, UserConfig } from "vite";
-import { defineConfig } from "vite";
+import typescript from "@rollup/plugin-typescript"
+import { defuFn } from "defu"
+import renameNodeModules from "rollup-plugin-rename-node-modules"
+import type { Plugin, UserConfig } from "vite"
+import { defineConfig } from "vite"
 
-import { builtins } from "../lib/builtins";
+import { builtins } from "../lib/builtins"
 
-import type { Options } from "../types";
+import type { Options } from "../types"
 
 export const extendConfigPlugin = (options: Options): Plugin => {
 	const getDefaultConfig = (userConfig: UserConfig) =>
@@ -20,15 +20,15 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					fileName: (format) => {
 						switch (format) {
 							case "es": {
-								return "[name].js";
+								return "[name].js"
 							}
 
 							case "cjs": {
-								return "[name].cjs";
+								return "[name].cjs"
 							}
 						}
 
-						throw new Error(`Unsupported format: ${format}`);
+						throw new Error(`Unsupported format: ${format}`)
 					},
 				},
 				rollupOptions: {
@@ -69,7 +69,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 				minify: false,
 				sourcemap: true,
 			},
-		});
+		})
 
 	return {
 		name: "sdk:extend-config",
@@ -77,10 +77,10 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 			// Disable config extension in test otherwise coverage runs twice because of Vitest's watcher, see:
 			// https://github.com/vitest-dev/vitest/blob/main/packages/vitest/src/node/core.ts#L382-L426
 			if (env.mode === "test") {
-				return;
+				return
 			}
 
-			return defuFn(userConfig, getDefaultConfig(userConfig));
+			return defuFn(userConfig, getDefaultConfig(userConfig))
 		},
-	};
-};
+	}
+}

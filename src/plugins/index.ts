@@ -1,2 +1,2 @@
-export { extendConfigPlugin } from "./extendConfig";
-export { moveTypeDeclarationsPlugin } from "./moveTypeDeclarations";
+export { extendConfigPlugin } from "./extendConfig"
+export { moveTypeDeclarationsPlugin } from "./moveTypeDeclarations"

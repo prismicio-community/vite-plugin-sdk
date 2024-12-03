@@ -7,39 +7,39 @@ export interface Options {
 	 *
 	 * @defaultValue First `package.json` found from the current working directory and up.
 	 */
-	packageJSON: PackageJSON;
+	packageJSON: PackageJSON
 
 	/**
 	 * Whether or not to generate type declarations in the build.
 	 *
 	 * @defaultValue `true`
 	 */
-	dts: boolean;
+	dts: boolean
 
 	/**
 	 * A list of dependencies to ignore from Rollup's `external` option.
 	 *
 	 * @defaultValue `[]`
 	 */
-	internalDependencies: string[];
+	internalDependencies: string[]
 
 	/**
 	 * Directory to consider as the root `src` directory
 	 *
 	 * @defaultValue `src`
 	 */
-	srcDir: string;
+	srcDir: string
 }
 
 /**
  * Shaved-down `package.json` type for internal use.
  */
 export interface PackageJSON {
-	name: string;
-	version: string;
-	dependencies?: Record<string, string>;
-	devDependencies?: Record<string, string>;
-	optionalDependencies?: Record<string, string>;
-	peerDependencies?: Record<string, string>;
-	[Key: string]: unknown;
+	name: string
+	version: string
+	dependencies?: Record<string, string>
+	devDependencies?: Record<string, string>
+	optionalDependencies?: Record<string, string>
+	peerDependencies?: Record<string, string>
+	[Key: string]: unknown
 }

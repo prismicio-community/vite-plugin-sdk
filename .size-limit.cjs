@@ -1,4 +1,4 @@
-const pkg = require("./package.json");
+const pkg = require("./package.json")
 
 module.exports = [
 	...new Set([
@@ -6,23 +6,23 @@ module.exports = [
 		pkg.module,
 		...Object.values(pkg.exports).flatMap((exportValue) => {
 			if (typeof exportValue === "string") {
-				return exportValue;
+				return exportValue
 			} else {
-				return Object.values(exportValue);
+				return Object.values(exportValue)
 			}
 		}),
 	]),
 ]
 	.filter((path) => {
-		return path && path !== "./package.json";
+		return path && path !== "./package.json"
 	})
 	.map((path) => {
 		return {
 			path,
 			modifyEsbuildConfig(config) {
-				config.platform = "node";
+				config.platform = "node"
 
-				return config;
+				return config
 			},
-		};
-	});
+		}
+	})

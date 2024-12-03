@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
+import { defineConfig } from "vite"
 
-import sdk from "./src";
+import sdk from "./src"
 
 export default defineConfig({
 	plugins: [sdk()],
@@ -12,4 +12,4 @@ export default defineConfig({
 			reporter: ["lcovonly", "text"],
 		},
 	},
-});
+})
