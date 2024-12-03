@@ -34,14 +34,14 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 					external: [
 						// Node builtins with support for `node:` prefix.
 						...builtins.map(
-							(name) => new RegExp(`^(?:node:)?${name}(?:\/.*)?$`),
+							(name) => new RegExp(`^(?:node:)?${name}(?:/.*)?$`),
 						),
 						// `package.json` external dependencies, `devDependencies` should be inlined.
 						...[
 							...Object.keys(options.packageJSON.dependencies ?? {}),
 							...Object.keys(options.packageJSON.optionalDependencies ?? {}),
 							...Object.keys(options.packageJSON.peerDependencies ?? {}),
-						].map((name) => new RegExp(`^${name}(?:\/.*)?$`)),
+						].map((name) => new RegExp(`^${name}(?:/.*)?$`)),
 					].filter(
 						(regexp) =>
 							!options.internalDependencies.some((internalDependency) =>
