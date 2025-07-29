@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.3...v0.1.4) (2025-07-29)
+
+
+### Features
+
+* support Vite 7 ([#10](https://github.com/prismicio-community/vite-plugin-sdk/issues/10)) ([9e0c4c4](https://github.com/prismicio-community/vite-plugin-sdk/commit/9e0c4c4722e2d1dd8a55c637fa4bb9ca9886baf5))
+
 ### [0.1.3](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.2...v0.1.3) (2024-12-03)
 
 
