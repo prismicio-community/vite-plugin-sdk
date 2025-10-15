@@ -90,29 +90,51 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 }
 
 /**
- * Adds a `.js` extension to all import declarations that do not contain an
- * extension.
+ * Adds a `.js` extension to all import and export declarations that do not
+ * contain an extension.
  */
 function addImportExtensionsTransformer(context: ts.TransformationContext) {
 	return (source: ts.Bundle | ts.SourceFile) => {
 		function visitor(node: ts.Node) {
-			if (ts.isImportDeclaration(node)) {
-				const moduleSpecifier = node.moduleSpecifier
-				if (moduleSpecifier && ts.isStringLiteral(moduleSpecifier)) {
-					const text = moduleSpecifier.text
-					if (text.startsWith(".") && !/\.[a-z0-9]+$/i.test(text)) {
-						const newModuleSpecifier = ts.factory.createStringLiteral(
-							text + ".js",
-						)
+			function shouldAddExtension(moduleSpecifier: ts.StringLiteral) {
+				const text = moduleSpecifier.text
 
-						return ts.factory.updateImportDeclaration(
-							node,
-							node.modifiers,
-							node.importClause,
-							newModuleSpecifier,
-							node.attributes,
-						)
-					}
+				return text.startsWith(".") && !/\.[a-z0-9]+$/i.test(text)
+			}
+
+			function addExtension(moduleSpecifier: ts.StringLiteral) {
+				return ts.factory.createStringLiteral(moduleSpecifier.text + ".js")
+			}
+
+			if (ts.isImportDeclaration(node)) {
+				if (
+					ts.isStringLiteral(node.moduleSpecifier) &&
+					shouldAddExtension(node.moduleSpecifier)
+				) {
+					return ts.factory.updateImportDeclaration(
+						node,
+						node.modifiers,
+						node.importClause,
+						addExtension(node.moduleSpecifier),
+						node.attributes,
+					)
+				}
+			}
+
+			if (ts.isExportDeclaration(node)) {
+				if (
+					node.moduleSpecifier &&
+					ts.isStringLiteral(node.moduleSpecifier) &&
+					shouldAddExtension(node.moduleSpecifier)
+				) {
+					return ts.factory.updateExportDeclaration(
+						node,
+						node.modifiers,
+						node.isTypeOnly,
+						node.exportClause,
+						addExtension(node.moduleSpecifier),
+						node.attributes,
+					)
 				}
 			}
 
