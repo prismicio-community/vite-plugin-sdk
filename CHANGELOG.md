@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5-alpha.0](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.4...v0.1.5-alpha.0) (2025-10-15)
+
+
+### Features
+
+* add `.js` import extensions in `.d.ts` files ([1a7d5b0](https://github.com/prismicio-community/vite-plugin-sdk/commit/1a7d5b009a1e725d78f5f681e12a55afed6144b1))
+
 ### [0.1.4](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.3...v0.1.4) (2025-07-29)
 
 
