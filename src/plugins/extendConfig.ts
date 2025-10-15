@@ -3,6 +3,7 @@ import * as path from "node:path"
 import typescript from "@rollup/plugin-typescript"
 import { defuFn } from "defu"
 import renameNodeModules from "rollup-plugin-rename-node-modules"
+import ts from "typescript"
 import type { Plugin, UserConfig } from "vite"
 import { defineConfig } from "vite"
 
@@ -60,6 +61,9 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 							declaration: options.dts,
 							outDir: userConfig.build?.outDir || "dist",
 							include: [path.posix.join(options.srcDir, "**/*")],
+							transformers: {
+								afterDeclarations: [addImportExtensionsTransformer],
+							},
 						}) as Plugin,
 						// Ensure bundled dependencies are published to npm.
 						// `npm pack` ignores directories named `node_modules`.
@@ -82,5 +86,39 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 
 			return defuFn(userConfig, getDefaultConfig(userConfig))
 		},
+	}
+}
+
+/**
+ * Adds a `.js` extension to all import declarations that do not contain an
+ * extension.
+ */
+function addImportExtensionsTransformer(context: ts.TransformationContext) {
+	return (source: ts.Bundle | ts.SourceFile) => {
+		function visitor(node: ts.Node) {
+			if (ts.isImportDeclaration(node)) {
+				const moduleSpecifier = node.moduleSpecifier
+				if (moduleSpecifier && ts.isStringLiteral(moduleSpecifier)) {
+					const text = moduleSpecifier.text
+					if (text.startsWith(".") && !/\.[a-z0-9]+$/i.test(text)) {
+						const newModuleSpecifier = ts.factory.createStringLiteral(
+							text + ".js",
+						)
+
+						return ts.factory.updateImportDeclaration(
+							node,
+							node.modifiers,
+							node.importClause,
+							newModuleSpecifier,
+							node.attributes,
+						)
+					}
+				}
+			}
+
+			return ts.visitEachChild(node, visitor, context)
+		}
+
+		return ts.visitEachChild(source, visitor, context)
 	}
 }
