@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5-alpha.1](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.5-alpha.0...v0.1.5-alpha.1) (2025-10-15)
+
+
+### Bug Fixes
+
+* support `export` declarations ([cd292bd](https://github.com/prismicio-community/vite-plugin-sdk/commit/cd292bd75a6342d4e43c254b3d129c8c1d3aa5a8))
+
 ### [0.1.5-alpha.0](https://github.com/prismicio-community/vite-plugin-sdk/compare/v0.1.4...v0.1.5-alpha.0) (2025-10-15)
 
 
