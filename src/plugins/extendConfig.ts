@@ -62,7 +62,7 @@ export const extendConfigPlugin = (options: Options): Plugin => {
 							outDir: userConfig.build?.outDir || "dist",
 							include: [path.posix.join(options.srcDir, "**/*")],
 							transformers: {
-								afterDeclarations: [addImportExtensionsTransformer],
+								afterDeclarations: [addImportExportExtensionsTransformer],
 							},
 						}) as Plugin,
 						// Ensure bundled dependencies are published to npm.
@@ -93,7 +93,9 @@ export const extendConfigPlugin = (options: Options): Plugin => {
  * Adds a `.js` extension to all import and export declarations that do not
  * contain an extension.
  */
-function addImportExtensionsTransformer(context: ts.TransformationContext) {
+function addImportExportExtensionsTransformer(
+	context: ts.TransformationContext,
+) {
 	return (source: ts.Bundle | ts.SourceFile) => {
 		function visitor(node: ts.Node) {
 			function shouldAddExtension(moduleSpecifier: ts.StringLiteral) {
